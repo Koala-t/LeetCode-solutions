@@ -25,7 +25,7 @@ var addDigits = function(num) {
       // reassign numString to a stringified version of result
       numString = '' + result;
       // reassign digits to an array of the new numString
-      digits = numString.split()
+      digits = numString.split('')
       //call addition
       return addition()
     }
