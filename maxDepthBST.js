@@ -13,6 +13,13 @@
 
 var maxDepth = function(root) {
     var result = [1];
+    // I could also refactor this by setting a max-variable to 1
+    // If I pass in 1 as the second parameter I can increment the second parameter on each iteration
+    // and if the second parameter gets larger than the max
+    // reset the max to equal the new parameter value
+    // returning max at the end
+    // I won't do this because I would rather spend the time studying
+    
     //if there is no root, return a depth of 0
     if (!root) {
 	    return 0;
