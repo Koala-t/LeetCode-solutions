@@ -12,20 +12,15 @@ Minimize the total number of operations.
 
 var moveZeroes = function(nums) {
 	var numZeroes = 0;
-	var zeroPositions = [];
 
 	// find the locations of the zeroes
-	nums.forEach(function(number, index) {
-		if (number === 0) {
+	for (var i = 0; i < nums.length; i++) {
+		if (nums[i] === 0) {
 			numZeroes++;
-			zeroPositions.unshift(index);
+			nums.splice(i, 1);
+			i--;
 		}
-	}) 
-
-	//remove the zeroes
-	zeroPositions.forEach(function(position) {
-		nums.splice(position, 1);		
-	})
+	}
 
 	// add new zeroes to the end
 	for (var i = 0; i < numZeroes; i++) {
