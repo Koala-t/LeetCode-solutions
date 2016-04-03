@@ -15,22 +15,23 @@ var moveZeroes = function(nums) {
 	var zeroPositions = [];
 
 	// find the locations of the zeroes
-	for (var i = 0; i < nums.length; i++) {
-		if (nums[i] === 0) {
+	nums.forEach(function(number, index) {
+		if (number === 0) {
 			numZeroes++;
-			zeroPositions.unshift(i);
+			zeroPositions.unshift(index);
 		}
-	}
+	}) 
 
 	//remove the zeroes
-	for (var j = 0; j < zeroPositions.length; j++) {
-		nums.splice(zeroPositions[j], 1);
-	}
+	zeroPositions.forEach(function(position) {
+		nums.splice(position, 1);		
+	})
 
 	// add new zeroes to the end
-	for (var k = 0; k < numZeroes; k++) {
+	for (var i = 0; i < numZeroes; i++) {
 		nums.push(0);
 	}    
 
+	//return the transformed array;
 	return nums;
 };
