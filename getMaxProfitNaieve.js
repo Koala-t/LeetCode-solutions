@@ -31,14 +31,12 @@ var getMaxProfit = function(priceArray) {
 		lowestIndex = copyArray.indexOf(lowestPrice);
 		// make sure the lowest price isn't the last price
 		for (var i = lowestIndex; i < copyArray.length; i++) {
-			if (copyArray[i] > highestPrice) {
-				highestPrice = copyArray[i];
-			}
+			highestPrice = Math.max(copyArray[i], highestPrice);
+			
 		}	
 		profit = highestPrice - lowestPrice;
-		if ( profit > maxProfit) {
-			maxProfit = profit;
-		}
+		maxProfit = Math.max(profit, maxProfit);
+		
 		//	find the next lowest value in the array...
 		copyArray.splice(lowestIndex, 1);
 		if (copyArray.length > 0) {
